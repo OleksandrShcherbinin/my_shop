@@ -5,4 +5,44 @@ description = "Add your description here"
 requires-python = ">=3.13"
 dependencies = [
     "django>=6.0.5",
+    "python-dotenv>=1.2.2",
 ]
+
+[dependency-groups]
+dev = [
+    "bandit>=1.9.4",
+    "ruff>=0.15.12",
+    "ty>=0.0.35",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = [
+    "mirgations",
+    ".venv",
+    "static",
+    "staticfiles",
+]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "DJ", "S"]
+ignore = ["E501", "S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/settings.py" = ["S105"]
+"**/tests/**" = ["S"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", "migrations", "static", "staticfiles"]
+skip = ["B101"]
+
+[tool.ty.environment]
+python-version = "3.13"
+
+[tool.ty.rules]
+unresolved-import = 'warn'
