@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
     <div class="side-menu-wrap">
         <button class="side-menu-close"><span></span></button>
@@ -146,253 +146,39 @@
             </div>
 
             <div class="row">
+                {% for product in recent_products %}
                 <div class="col-lg-3 col-md-6 col-12 mb-30">
-
                     <div class="product-item bg-white">
                         <div class="product-inner">
-
+                            {% with first_image=product.images.first %}
                             <div class="image-wrap">
-                                <a href="single-product.html" class="image"><img
-                                        src="static/images/product/product-1.png" alt=""></a>
-                                <a href="index.html#" class="wishlist"><img src="static/images/icons/heart.png"
+                                <a href="{% url 'shop:detail_product' product.slug %}" class="image"><img
+                                        src="{{ first_image.image.url }}" alt=""></a>
+                                <a href="{% url 'shop:detail_product' product.slug %}" class="wishlist"><img src="{{ first_image.image.url }}"
                                                                   alt="Wishlist"></a>
                                 <div class="actions">
-                                    <a href="index.html#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="fa fa-eye"></i></a>
-                                    <a href="index.html#"><i class="fa fa-refresh"></i></a>
+                                    <a href="{% url 'shop:detail_product' product.slug %}"><i class="fa fa-shopping-cart"></i></a>
+                                    <a href="{% url 'shop:detail_product' product.slug %}"><i class="fa fa-eye"></i></a>
+                                    <a href="{% url 'shop:detail_product' product.slug %}"><i class="fa fa-refresh"></i></a>
                                 </div>
                             </div>
+                            {% endwith %}
 
                             <div class="content text-center">
-                                <h4 class="title"><a href="single-product.html">Injected humour</a></h4>
+                                <h4 class="title"><a href="{% url 'shop:detail_product' product.slug %}">{{ product.name }}</a></h4>
                                 <div class="price">
-                                    <del class="price-old">$799.99</del>
-                                    <span class="price-sale">$566.77</span>
+                                    {% if product.old_price %}
+                                    <del class="price-old">${{ product.old_price }}</del>
+                                    {% endif %}
+                                    <span class="price-sale">${{ product.price }}</span>
                                 </div>
 
                             </div>
 
                         </div>
                     </div>
-
                 </div>
-
-                <div class="col-lg-3 col-md-6 col-12 mb-30">
-
-                    <div class="product-item bg-white">
-                        <div class="product-inner">
-
-                            <div class="image-wrap">
-                                <a href="single-product.html" class="image"><img
-                                        src="static/images/product/product-2.png" alt=""></a>
-                                <a href="index.html#" class="wishlist"><img src="static/images/icons/heart.png"
-                                                                  alt="Wishlist"></a>
-                                <div class="actions">
-                                    <a href="index.html#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="fa fa-eye"></i></a>
-                                    <a href="index.html#"><i class="fa fa-refresh"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="content text-center">
-                                <h4 class="title"><a href="single-product.html">Humour Injected</a></h4>
-                                <div class="price">
-                                    <del class="price-old">$899.22</del>
-                                    <span class="price-sale">$666.77</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-12 mb-30">
-
-                    <div class="product-item bg-white">
-                        <div class="product-inner">
-
-                            <div class="image-wrap">
-                                <a href="single-product.html" class="image"><img
-                                        src="static/images/product/product-3.png" alt=""></a>
-                                <a href="index.html#" class="wishlist"><img src="static/images/icons/heart.png"
-                                                                  alt="Wishlist"></a>
-                                <div class="actions">
-                                    <a href="index.html#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="fa fa-eye"></i></a>
-                                    <a href="index.html#"><i class="fa fa-refresh"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="content text-center">
-                                <h4 class="title"><a href="single-product.html">Literature Classical</a></h4>
-                                <div class="price">
-                                    <del class="price-old">$299.33</del>
-                                    <span class="price-sale">$166.20</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-12 mb-30">
-
-                    <div class="product-item bg-white">
-                        <div class="product-inner">
-
-                            <div class="image-wrap">
-                                <a href="single-product.html" class="image"><img
-                                        src="static/images/product/product-4.png" alt=""></a>
-                                <a href="index.html#" class="wishlist"><img src="static/images/icons/heart.png"
-                                                                  alt="Wishlist"></a>
-                                <div class="actions">
-                                    <a href="index.html#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="fa fa-eye"></i></a>
-                                    <a href="index.html#"><i class="fa fa-refresh"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="content text-center">
-                                <h4 class="title"><a href="single-product.html">Literature Classical</a></h4>
-                                <div class="price">
-                                    <del class="price-old">$799.99</del>
-                                    <span class="price-sale">$566.77</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-12 mb-30">
-
-                    <div class="product-item bg-white">
-                        <div class="product-inner">
-
-                            <div class="image-wrap">
-                                <a href="single-product.html" class="image"><img
-                                        src="static/images/product/product-5.png" alt=""></a>
-                                <a href="index.html#" class="wishlist"><img src="static/images/icons/heart.png"
-                                                                  alt="Wishlist"></a>
-                                <div class="actions">
-                                    <a href="index.html#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="fa fa-eye"></i></a>
-                                    <a href="index.html#"><i class="fa fa-refresh"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="content text-center">
-                                <h4 class="title"><a href="single-product.html">Humour Injected</a></h4>
-                                <div class="price">
-                                    <del class="price-old">$799.99</del>
-                                    <span class="price-sale">$566.77</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-12 mb-30">
-
-                    <div class="product-item bg-white">
-                        <div class="product-inner">
-
-                            <div class="image-wrap">
-                                <a href="single-product.html" class="image"><img
-                                        src="static/images/product/product-6.png" alt=""></a>
-                                <a href="index.html#" class="wishlist"><img src="static/images/icons/heart.png"
-                                                                  alt="Wishlist"></a>
-                                <div class="actions">
-                                    <a href="index.html#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="fa fa-eye"></i></a>
-                                    <a href="index.html#"><i class="fa fa-refresh"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="content text-center">
-                                <h4 class="title"><a href="single-product.html">Classical literature</a></h4>
-                                <div class="price">
-                                    <del class="price-old">$799.99</del>
-                                    <span class="price-sale">$566.77</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-12 mb-30">
-
-                    <div class="product-item bg-white">
-                        <div class="product-inner">
-
-                            <div class="image-wrap">
-                                <a href="single-product.html" class="image"><img
-                                        src="static/images/product/product-7.png" alt=""></a>
-                                <a href="index.html#" class="wishlist"><img src="static/images/icons/heart.png"
-                                                                  alt="Wishlist"></a>
-                                <div class="actions">
-                                    <a href="index.html#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="fa fa-eye"></i></a>
-                                    <a href="index.html#"><i class="fa fa-refresh"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="content text-center">
-                                <h4 class="title"><a href="single-product.html">Humour Injected</a></h4>
-                                <div class="price">
-                                    <del class="price-old">$799.99</del>
-                                    <span class="price-sale">$566.77</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-12 mb-30">
-
-                    <div class="product-item bg-white">
-                        <div class="product-inner">
-
-                            <div class="image-wrap">
-                                <a href="single-product.html" class="image"><img
-                                        src="static/images/product/product-8.png" alt=""></a>
-                                <a href="index.html#" class="wishlist"><img src="static/images/icons/heart.png"
-                                                                  alt="Wishlist"></a>
-                                <div class="actions">
-                                    <a href="index.html#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a href="index.html#"><i class="fa fa-eye"></i></a>
-                                    <a href="index.html#"><i class="fa fa-refresh"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="content text-center">
-                                <h4 class="title"><a href="single-product.html">Classical literature</a></h4>
-                                <div class="price">
-                                    <del class="price-old">$799.99</del>
-                                    <span class="price-sale">$566.77</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
