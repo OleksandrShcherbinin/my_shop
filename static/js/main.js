@@ -271,12 +271,16 @@
     });
 
 
-    $(".btn-src").on('click', function () {
-        $(".header-search").addClass("show");
+    $(document).on('click', '.btn-src', function () {
+
+        $('.header-search').addClass('show');
+
     });
 
-    $(".btn-close").on('click', function () {
-        $(".header-search").removeClass("show");
+    $(document).on('click', '.btn-close', function () {
+
+        $('.header-search').removeClass('show');
+
     });
 
     $(window).on('load', function () {

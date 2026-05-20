@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="side-menu-wrap">
+    <button class="side-menu-close"><span></span></button>
+    <div class="side-menu-inner">
+
+        <div class="side-logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></div>
+
+        <div class="side-menu nice-scroll">
+            <nav>
+                <ul>
+                    <li class="menu-item-has-children"><a href="index.html">Home</a>
+                        <ul class="sub-menu">
+                            <li><a href="index.html">Home One</a></li>
+                            <li><a href="index-2.html">Home Two</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="shop-left-sidebar.html">Shop</a>
+                        <ul class="sub-menu">
+                            <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
+                            <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                            <li><a href="shop-full-width.html">Shop Full Width</a></li>
+                            <li><a href="single-product.html">Single Product</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="shop-left-sidebar.html#">Pages</a>
+                        <ul class="sub-menu">
+                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="login-register.html">Login Register</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="blog-left-sidebar.html">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                            <li><a href="blog-full-width.html">Blog Full Width</a></li>
+                            <li><a href="single-blog-left-sidebar.html">Single Blog Left Sidebar</a></li>
+                            <li><a href="single-blog-right-sidebar.html">Single Blog Right Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="side-social">
+            <a href="shop-left-sidebar.html#"><i class="fa fa-facebook"></i></a>
+            <a href="shop-left-sidebar.html#"><i class="fa fa-twitter"></i></a>
+            <a href="shop-left-sidebar.html#"><i class="fa fa-pinterest"></i></a>
+            <a href="shop-left-sidebar.html#"><i class="fa fa-instagram"></i></a>
+            <a href="shop-left-sidebar.html#"><i class="fa fa-google-plus"></i></a>
+        </div>
+
+    </div>
+</div>
+
+<div class="side-menu-overlay"></div>
+
+<!-- Page Banner Section Start -->
+<div class="page-banner-section section bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="page-banner-content text-center col">
+                <h1>Shop Left Sidebar</h1>
+                <ul class="breadcrumb justify-content-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Banner Section End -->
+
+<!-- Product Section Start -->
+<div class="product-section section bg-white mt-100 mb-60 mt-xs-70 mb-xs-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-12 order-1 order-lg-2 mb-40">
+                <div class="row">
+                    {% for product in page_obj %}
+                    {% include 'single-product-block.html' %}
+                    {% endfor %}
+                </div>
+                {% include 'pagination.html' %}
+            </div>
+
+
+            <div class="col-lg-3 col-12 order-2 order-lg-1">
+                <div class="sidebar">
+                    <h3 class="title">Category</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="shop-left-sidebar.html#">Shart <span class="num">18</span></a></li>
+                        <li><a href="shop-left-sidebar.html#">Pants <span class="num">09</span></a></li>
+                        <li><a href="shop-left-sidebar.html#">T-Shart <span class="num">05</span></a></li>
+                        <li><a href="shop-left-sidebar.html#">Tops <span class="num">03</span></a></li>
+                        <li><a href="shop-left-sidebar.html#">Kid's Clothes <span class="num">15</span></a></li>
+                        <li><a href="shop-left-sidebar.html#">Watch <span class="num">07</span></a></li>
+                        <li><a href="shop-left-sidebar.html#">Accessories <span class="num">02</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar">
+                    <h3 class="title">Colors</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="shop-left-sidebar.html#"><span class="color" style="background-color: #000000"></span> Black</a></li>
+                        <li><a href="shop-left-sidebar.html#"><span class="color" style="background-color: #FF0000"></span> Red</a></li>
+                        <li><a href="shop-left-sidebar.html#"><span class="color" style="background-color: #0000FF"></span> Blue</a></li>
+                        <li><a href="shop-left-sidebar.html#"><span class="color" style="background-color: #28901D"></span> Green</a></li>
+                        <li><a href="shop-left-sidebar.html#"><span class="color" style="background-color: #FF6801"></span> Orange</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar">
+                    <h3 class="title">Popular Product</h3>
+
+                    <div class="sidebar-product-wrap">
+                        <div class="sidebar-product">
+                            <a href="single-product.html" class="image"><img
+                                    src="assets/images/product/product-1.png" alt=""></a>
+                            <div class="content">
+                                <a href="single-product.html" class="title">Injected humour</a>
+                                <span class="price">$799.99</span>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-product">
+                            <a href="single-product.html" class="image"><img
+                                    src="assets/images/product/product-2.png" alt=""></a>
+                            <div class="content">
+                                <a href="single-product.html" class="title">Classical literature</a>
+                                <span class="price">$599.99 <span class="old">$799.99</span></span>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-product">
+                            <a href="single-product.html" class="image"><img
+                                    src="assets/images/product/product-3.png" alt=""></a>
+                            <div class="content">
+                                <a href="single-product.html" class="title">Classical literature</a>
+                                <span class="price">$649.99 <span class="old">$799.99</span></span>
+                                <div class="ratting">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sidebar">
+                    <h3 class="title">Price</h3>
+
+                    <div class="sidebar-price">
+                        <div id="price-range"></div>
+                        <input type="text" id="price-amount" readonly>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <h3 class="title">Tags</h3>
+                    <ul class="sidebar-tag">
+                        <li><a href="shop-left-sidebar.html#">New</a></li>
+                        <li><a href="shop-left-sidebar.html#">brand</a></li>
+                        <li><a href="shop-left-sidebar.html#">black</a></li>
+                        <li><a href="shop-left-sidebar.html#">white</a></li>
+                        <li><a href="shop-left-sidebar.html#">chire</a></li>
+                        <li><a href="shop-left-sidebar.html#">table</a></li>
+                        <li><a href="shop-left-sidebar.html#">Lorem</a></li>
+                        <li><a href="shop-left-sidebar.html#">ipsum</a></li>
+                        <li><a href="shop-left-sidebar.html#">dolor</a></li>
+                        <li><a href="shop-left-sidebar.html#">sit</a></li>
+                        <li><a href="shop-left-sidebar.html#">amet</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- Product Section End -->
+
+<!-- Subscribe Section Start -->
+<div class="subscribe-section section bg-light-blue pt-55 pb-55">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 ml-auto mr-auto col-12">
+                <div class="row align-items-center">
+
+                    <!-- Mailchimp Subscribe Content Start -->
+                    <div class="col-lg-6 col-12 mb-15 mt-15">
+                        <div class="subscribe-content">
+                            <h2>Subscribe to our Newsletter</h2>
+                            <h4>Subscribe today and get 15% <br>discount cupon code</h4>
+                        </div>
+                    </div><!-- Mailchimp Subscribe Content End -->
+
+
+                    <!-- Mailchimp Subscribe Form Start -->
+                    <div class="col-lg-6 col-12 mb-15 mt-15">
+
+                        <form id="mc-form" class="mc-form subscribe-form">
+                            <input id="mc-email" type="email" autocomplete="off" placeholder="Enter your email"/>
+                            <button id="mc-submit">subscribe</button>
+                        </form>
+                        <!-- mailchimp-alerts Start -->
+                        <div class="mailchimp-alerts text-centre">
+                            <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                            <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                            <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                        </div><!-- mailchimp-alerts end -->
+
+                    </div><!-- Mailchimp Subscribe Form End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

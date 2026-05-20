@@ -1231,7 +1231,7 @@ img.mfp-img {
     position: absolute;
     left: -120px;
     top: 100%;
-    z-index: 99;
+    z-index: 99999;
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transform: translateY(20px);
@@ -1239,6 +1239,7 @@ img.mfp-img {
     visibility: hidden;
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
+    display: none;
     transition: 0.4s; }
     @media only screen and (max-width: 479px) {
       .header-search .search-content-wrap {
@@ -1260,6 +1261,7 @@ img.mfp-img {
     -ms-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
+    display: block;
     visibility: visible; }
 
 /*---------------------------------------

@@ -1,0 +1,33 @@
+<div class="col-xl-4 col-md-6 col-12 mb-30">
+    <div class="product-item bg-gray">
+        <div class="product-inner">
+
+            {% with first_image=product.images.first %}
+            <div class="image-wrap">
+                <a href="{% url 'shop:detail_product' product.slug %}" class="image"><img
+                        src="{{ first_image.image.url }}" alt=""></a>
+                <a href="shop-left-sidebar.html#" class="wishlist"><img src="{{ first_image.image.url }}"
+                                                  alt="Wishlist"></a>
+                <div class="actions">
+                    <a href="shop-left-sidebar.html#"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="shop-left-sidebar.html#"><i class="fa fa-eye"></i></a>
+                    <a href="shop-left-sidebar.html#"><i class="fa fa-refresh"></i></a>
+                </div>
+            </div>
+            {% endwith %}
+
+            <div class="content text-center">
+
+                <h4 class="title"><a href="{% url 'shop:detail_product' product.slug %}">{{ product.name }}</a></h4>
+                <div class="price">
+                    {% if product.old_price %}
+                    <del class="price-old">${{ product.old_price }}</del>
+                    {% endif %}
+                    <span class="price-sale">${{ product.price }}</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
